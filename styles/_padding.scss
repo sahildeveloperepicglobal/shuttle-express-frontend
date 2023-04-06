@@ -1,0 +1,37 @@
+:root {
+  @for $i from 1 through 128 {
+    --padding-#{$i}: #{$i}px;
+  }
+}
+
+// FOR GENERATE PADDING
+@for $i from 1 through 128 {
+  .p-#{$i} {
+    padding: var(--padding-#{$i});
+  }
+}
+
+// FOR GENERATE PADDING TOP
+@for $i from 1 through 128 {
+  .pt-#{$i} {
+    padding-top: var(--padding-#{$i});
+  }
+}
+// FOR GENERATE PADDING BOTTOm
+@for $i from 1 through 128 {
+  .pb-#{$i} {
+    padding-bottom: var(--padding-#{$i});
+  }
+}
+// FOR GENERATE PADDING RIGHT
+@for $i from 1 through 128 {
+  .pr-#{$i} {
+    padding-right: var(--padding-#{$i});
+  }
+}
+// FOR GENERATE PADDING LEFT
+@for $i from 1 through 128 {
+  .pl-#{$i} {
+    padding-left: var(--padding-#{$i});
+  }
+}

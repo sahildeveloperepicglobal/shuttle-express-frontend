@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "poppins";
+    src: url(/fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "poppins";
+    src: url(/fonts/Poppins-Medium.ttf);
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: "poppins";
+    src: url(/fonts/Poppins-SemiBold.ttf);
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: "poppins";
+    src: url(/fonts/Poppins-Bold.ttf);
+    font-weight: 700;
+  }
+  
+  // FOR GENRATE FONT SIZE
+  :root {
+    @for $i from 1 through 128 {
+      --font-size-#{$i}: #{$i}px;
+    }
+    @for $i from 1 through 9 {
+      --font-weight-#{$i}00: #{$i}00;
+    }
+    @for $i from 1 through 128 {
+      --line-height-#{$i}: #{$i}px;
+    }
+  }
+  
+  // FONT SIZE
+  @for $i from 1 through 128 {
+    .font-size-#{$i} {
+      font-size: var(--font-size-#{$i});
+    }
+  }
+  // FONT WEIGHT
+  @for $i from 1 through 9 {
+    .font-w-#{$i} {
+      font-weight: var(--font-weight-#{$i});
+    }
+  }
+  // LINE HEIGHT
+  @for $i from 1 through 128 {
+    .line-height-#{$i} {
+      line-height: var(--line-height-#{$i});
+    }
+  }

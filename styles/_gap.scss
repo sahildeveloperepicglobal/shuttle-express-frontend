@@ -1,0 +1,26 @@
+// FOR GENERATE COLOMN
+$colomn: 12;
+@for $i from 1 through $colomn {
+  .col-lg-#{$i} {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 (100% / $colomn) * $i;
+    flex: 0 0 (100% / $colomn) * $i;
+    max-width: (100% / $colomn) * $i;
+  }
+}
+
+@for $i from 1 through 64 {
+  .gap-#{$i} {
+    grid-gap: #{$i}px;
+    gap: #{$i}px;
+  }
+}
+
+@for $i from 1 through 5 {
+  .simply-line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

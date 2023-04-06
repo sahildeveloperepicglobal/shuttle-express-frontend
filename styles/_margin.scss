@@ -1,0 +1,50 @@
+:root {
+  @for $i from 1 through 128 {
+    --margin-#{$i}: #{$i}px;
+  }
+}
+
+// FOR GENERATE MARGIN TOP
+@for $i from 1 through 100 {
+  .mt-#{$i} {
+    margin-top: var(--margin-#{$i});
+  }
+}
+// FOR GENERATE MARGIN BOTTOm
+@for $i from 1 through 100 {
+  .mb-#{$i} {
+    margin-bottom: var(--margin-#{$i});
+  }
+}
+// FOR GENERATE MARGIN RIGHT
+@for $i from 1 through 100 {
+  .mr-#{$i} {
+    margin-right: var(--margin-#{$i});
+  }
+}
+// FOR GENERATE MARGIN LEFT
+@for $i from 1 through 100 {
+  .ml-#{$i} {
+    margin-left: var(--margin-#{$i});
+  }
+}
+
+// FOR GENERATE MARGIN RIGHT --
+@for $i from 1 through 100 {
+  .mr--#{$i} {
+    margin-right: -var(--margin-#{$i});
+  }
+}
+// FOR GENERATE MARGIN LEFT ---
+@for $i from 1 through 100 {
+  .ml--#{$i} {
+    margin-left: -var(--margin-#{$i});
+  }
+}
+
+// FOR GENERATE MARGIN TOP --
+@for $i from 1 through 100 {
+  .mt--#{$i} {
+    margin-top: -var(--margin-#{$i});
+  }
+}

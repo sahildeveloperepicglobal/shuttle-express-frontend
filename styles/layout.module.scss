@@ -1,0 +1,30 @@
+// LAYOUT STYLE
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+}
+
+.header {
+  background: red;
+  position: sticky;
+  top: 0;
+}
+.container {
+  flex: 5;
+  background: antiquewhite;
+  display: grid;
+
+  grid-template-columns: 280px 1fr;
+}
+
+.sidebar {
+  background-color: #f6f6f7;
+  border-right: 1px solid #e1e3e5;
+  position: sticky;
+  top: 100px;
+}
+.content {
+  background: #f6f6f7;
+  overflow: auto;
+}
