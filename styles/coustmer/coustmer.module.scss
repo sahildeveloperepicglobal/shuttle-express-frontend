@@ -14,21 +14,199 @@
   border-radius: 15px;
   max-height: 130px;
 }
+
 .content {
   display: flex;
   justify-content: center;
 
   flex-direction: column;
+
   h2 {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 7px;
   }
+
   p {
     font-size: 18px;
     font-weight: 400;
   }
 }
+
 .imageSection {
   overflow: hidden;
+}
+
+.formLayout {
+  width: 100%;
+}
+
+.customerform {
+  width: 100%;
+  border-radius: 7px;
+  box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+  color: #2A3547;
+  margin-bottom: 40px;
+
+
+}
+
+.headingcont {
+  border-bottom: 1px solid;
+  border-color: #a9a9a947;
+
+  h3 {
+    padding: 16px 24px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.6rem;
+    display: block;
+    color: #2a3547bd;
+  }
+}
+
+.formsection {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 24px;
+}
+
+.formfield {
+  padding: 24px;
+
+  ul {
+    display: flex;
+    gap: 60px;
+    li {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        font: inherit;
+        letter-spacing: inherit;
+        color: currentColor;
+        padding: 4px 0 5px;
+        border: 0;
+        box-sizing: content-box;
+        background: none;
+        height: 1.4375em;
+        margin: 0;
+        -webkit-tap-highlight-color: transparent;
+        display: block;
+        min-width: 0;
+        width: 97%;
+        -webkit-animation-name: mui-auto-fill-cancel;
+        animation-name: mui-auto-fill-cancel;
+        -webkit-animation-duration: 10ms;
+        animation-duration: 10ms;
+        padding: 16.5px 14px;
+        padding: 12px 14px;
+        border: 1px solid #a9a9a947;
+        border-radius: 8px;
+      }
+      label {
+        margin-bottom: 8px;
+        margin: 0;
+        font-size: 0.875rem;
+        font-weight: 400;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        line-height: 1.75;
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 25px;
+        display: block;
+        margin-top: 0px;
+        color: #2a3547bd;
+      }
+      width: 45%;
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.loaction {
+  h5 {
+    font-size: 16px;
+    color: #2A3547;
+  }
+
+  // .destination {
+  //   ul {
+  //     display: flex;
+  //     gap: 20px;
+
+  //     li {
+  //       display: flex !important;
+  //       flex-direction: row;
+
+  //       label {
+  //         line-height: 3.5;
+  //         width: 20%;
+  //       }
+
+  //       input {
+  //         width: 100%;
+  //         margin-left: 16px;
+  //       }
+  //     }
+  //   }
+  // }
+}
+.datefield{
+  display: flex;
+  gap: 20px;
+}
+.submitbtn{
+  text-align: center;
+  padding: 20px;
+    margin-top: -55px;
+  button{
+    box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border: none;
+    padding: 16px 40px;
+    background-color:#5d87ff;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}
+.mui{
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 7px;
+    box-shadow: none;
+    background-image: none;
+    font-size: 0.75rem;
+    letter-spacing: 0rem;
+    font-weight: 400;
+    line-height: 1rem;
+    font-family: 'Plus Jakarta Sans',sans-serif;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
+    padding: 13px 16px;
+
+    background-color: #EBF3FE;
+    color: #539BFF;
+    margin-bottom: 25px;
+    svg{
+      display: inline-block;
+      flex-shrink: 0;
+      -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      font-size: inherit;
+      fill: #539BFF ;
+    }
+    p{
+      font-size: 13px;
+      padding: 2px 0;
+    }
 }
