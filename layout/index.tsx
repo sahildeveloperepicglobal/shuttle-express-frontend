@@ -8,12 +8,15 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   return (
     <React.Fragment>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header />
         <div className={styles.container}>
           <div className={styles.sidebar}>
             <Sidebar />
           </div>
-          <div className={styles.content}>{children}</div>
+
+          <div className={styles.content}>
+            <Header />
+            {children}
+          </div>
         </div>
       </main>
     </React.Fragment>

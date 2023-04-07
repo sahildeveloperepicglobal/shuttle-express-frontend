@@ -2,7 +2,7 @@
 .main {
   height: 100vh;
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 1fr;
 }
 
 .header {
@@ -19,12 +19,14 @@
 }
 
 .sidebar {
-  background-color: #f6f6f7;
+  background-color: #fff;
   border-right: 1px solid #e1e3e5;
   position: sticky;
   top: 100px;
+  padding-left: 24px;
+  padding-right: 16px;
 }
 .content {
-  background: #f6f6f7;
+  background: #fff;
   overflow: auto;
 }

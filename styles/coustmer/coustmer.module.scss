@@ -1,0 +1,34 @@
+// .wrapper {
+//   padding-left: 30px;
+//   padding-right: 30px;
+// }
+.coutmer {
+  margin-top: 5px !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 93%;
+  margin: 0 auto;
+  background-color: #ecf2ff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  max-height: 130px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+.imageSection {
+  overflow: hidden;
+}
