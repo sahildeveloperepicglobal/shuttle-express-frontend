@@ -10,9 +10,14 @@ import InfoIcon from "@/constant/infoicon";
 import DatePicker from "react-date-picker";
 import TimePicker from "react-time-picker";
 import replacer from "@/constant/utils/replacer";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 function Coustmer() {
   const [date, setDate] = useState(new Date());
+
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const [userfor, setUserform] = React.useState<any>({
     searchbyphone: "" as string,
@@ -45,21 +50,47 @@ function Coustmer() {
     [userfor]
   );
   const handleDateChange = React.useCallback(
-    (key:string,value: string) => {
+    (key: string, value: string) => {
       setUserform({
         ...userfor,
-        [key]:  (value),
+        [key]: value,
       });
     },
     [userfor]
   );
+
+  const formik = useFormik({
+    initialValues: {
+      phone: "",
+      email: "",
+      name: "",
+      locationFrom: "",
+      locationTill: "",
+    },
+    onSubmit: () => {
+      setMessage("Form Submitted");
+      setSubmitted(true);
+    },
+    validationSchema: yup.object({
+      name: yup.string().trim().required("Name is required"),
+      email: yup
+        .string()
+        .email("Must be Valid Email Address")
+        .required("Email is reqired"),
+      phone: yup.number().required("Phone Number is reqired"),
+      locationFrom: yup.string().required("Location From is required"),
+      locationTill: yup.string().required("Location Till is required"),
+    }),
+  });
   return (
     <>
       <div className={css.wrapper}>
         <PageDef />
+
+        <div hidden={!submitted}>{message}</div>
         <section className={css.formLayout}>
           <div className={css.formsection}>
-            <form className={css.forms} onSubmit={handleSubmit}>
+            <form className={css.forms} onSubmit={formik.handleSubmit}>
               <div className={css.customerform}>
                 <div className={css.headingcont}>
                   <h3>Coustmer Details Form</h3>
@@ -74,19 +105,31 @@ function Coustmer() {
                       <label> Search By Phone</label>
                       <input
                         type="number"
-                        name="searchbyphone"
-                        value={userfor.searchbyphone}
-                        onChange={handleInputChange}
+                        name="phone"
+                        value={formik.values.phone}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        maxLength={10}
+                        // value={formik.values.phone}
+                        // onChange={formik.handleChange}
+                        // onBlur={formik.handleBlur}
                       />
+                      {formik.errors.phone && (
+                        <div className="validation">{formik.errors.phone}</div>
+                      )}
                     </li>
                     <li>
                       <label>Name</label>
                       <input
                         type="text"
-                        name="username"
-                        value={userfor.username}
-                        onChange={handleInputChange}
+                        name="name"
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
                       />
+                      {formik.errors.name && (
+                        <div className="validation">{formik.errors.name}</div>
+                      )}
                     </li>
                   </ul>
                   <div className={css.loaction}>
@@ -97,19 +140,31 @@ function Coustmer() {
                           <label>From</label>
                           <input
                             type="text"
-                            name="from"
-                            value={userfor.from}
-                            onChange={handleInputChange}
+                            name="locationFrom"
+                            value={formik.values.locationFrom}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                           />
+                          {formik.errors.locationFrom && (
+                            <div className="validation">
+                              {formik.errors.locationFrom}
+                            </div>
+                          )}
                         </li>
                         <li>
                           <label>Till</label>
                           <input
                             type="text"
-                            name="till"
-                            value={userfor.till}
-                            onChange={handleInputChange}
+                            name="locationTill"
+                            value={formik.values.locationTill}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                           />
+                          {formik.errors.locationTill && (
+                            <div className="validation">
+                              {formik.errors.locationTill}
+                            </div>
+                          )}
                         </li>
                       </ul>
                     </div>
@@ -120,7 +175,7 @@ function Coustmer() {
                       <DatePicker
                         value={userfor.date}
                         name="date"
-                         
+
                         // onChange={(value)=>handleDateChange('date',value)}
                       />
                     </div>
@@ -129,9 +184,8 @@ function Coustmer() {
                       <TimePicker
                         value={userfor.time}
                         name="time"
-                      
-                        // onChange={(value)=>handleDateChange('time',value)}
 
+                        // onChange={(value)=>handleDateChange('time',value)}
                       />
                     </div>
                   </div>
@@ -235,7 +289,8 @@ function Coustmer() {
                 </div>
               </div>
               <div className={css.submitbtn}>
-                <button onClick={handleSubmit}>Submit</button>
+                {/* <button onClick={handleSubmit}>Submit</button> */}
+                <button type="submit">Submit</button>
               </div>
             </form>
           </div>
